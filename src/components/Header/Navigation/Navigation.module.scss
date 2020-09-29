@@ -13,30 +13,49 @@
         height: 55px;
         width: 145px;
     }
+    .nav {
+        display: flex;
+        align-items: center;
 
-    li {
-        display: inline;
-        color: black;
-        text-transform: uppercase;
-        list-style-type: none;
-    
-        a {
-            color: white;
-            font-family: SFUIText-Bold;
-            font-size: $text;
-            text-decoration: none;
-        
-            margin-right: 40px;
-            padding: 4px;
+        li {
+            display: inline;
+            color: black;
+            text-transform: uppercase;
+            list-style-type: none;
+            a {
+                color: white;
+                font-family: SFUIText-Bold;
+                font-size: $text;
+                text-decoration: none;
+            
+                margin-right: 40px;
+                padding: 4px;
+            }
+            a {
+                border-bottom: solid 2px white;
+            }
         }
-        
-        a {
-            border-bottom: solid 2px white;
+        .filter {
+            height: 40px;
+            width: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 30px;
+            cursor: pointer;
         }
     }
-
-    .filter {
-        height: 40px;
-        width: 40px;
+    .menu {
+        height: 24px;
+        width: 28px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+    .menu img {
+        height: 24px;
+        width: 28px;
+        object-fit: fill;
     }
 }
