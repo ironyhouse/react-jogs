@@ -1,12 +1,16 @@
 import React, { Component } from 'react'
-import classes from './Jogs.module.css';
+// import classes from './Jogs.module.scss';
+// import Filters from '../../components/Filters/Filters';
 
 class Jogs extends Component {
     render() {
         return(
-            <div className={classes.Jogs}>
-              
-            </div>
+            <>
+                {/* <Filters /> */}
+                <div>
+                    
+                </div>
+            </>
         )
     }
 }

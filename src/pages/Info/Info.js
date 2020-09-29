@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import classes from './Info.module.css';
+import classes from './Info.module.scss';
 
 class Info extends Component {
     render() {

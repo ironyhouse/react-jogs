@@ -1,0 +1,54 @@
+// fonts
+@font-face {
+  font-family: SFUIText-Regular;
+  src: local(SFUIText-Regular),
+      url(./font/SFUIText-Regular.woff) format("woff"),
+      url(./font/SFUIText-Regular.ttf) format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+}
+@font-face {
+font-family: SFUIText-Medium;
+src: local(SFUIText-Medium),
+  url(./font/SFUIText-Medium.woff) format("woff"),
+  url(./font/SFUIText-Medium.ttf) format("truetype");
+font-weight: 500;
+font-style: normal;
+font-stretch: normal;
+}
+@font-face {
+font-family: SFUIText-Bold;
+src: local(SFUIText-Bold),
+  url(./font/SFUIText-Bold.woff) format("woff"),
+  url(./font/SFUIText-Bold.ttf) format("truetype");
+font-weight: bold;
+font-style: normal;
+font-stretch: normal;
+}
+
+// colors
+$apple-green: #7ed321;
+$white: #eaeaea;
+$white-two: #ffffff;
+$baby-purple: #e990f9;
+
+// font-size
+$title: 36px;
+$subtitle: 16px;
+$text: 14px;
+
+body {
+  margin: 0;
+  font-family: SFUIText-Regular;
+}
+h1 {
+  color: $apple-green;
+  font-family: SFUIText-Bold;
+  font-size: $title;
+}
+p {
+  font-family: SFUIText-Regular;
+  font-size: $text;
+  line-height: 1.71;
+}
