@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import {Switch, Route, Redirect} from 'react-router-dom'
-import classes from './App.module.scss';
+// import classes from './App.module.scss';
 import Header from './components/Header/Header';
 // import Login from './pages/Login/Login';
 import Jogs from './pages/Jogs/Jogs';
 import Info from './pages/Info/Info';
+import AddJogForm from './pages/AddJogForm/AddJogForm';
+import Login from './pages/Login/Login';
 // import logo from './logo.svg';
 
 class App extends Component {
@@ -37,7 +39,8 @@ class App extends Component {
     // if (this.props.isAuthenticated) {
     let routes = (
         <Switch>
-          <Route path="/" exact component={Jogs} />
+          <Route path="/" exact component={Login} />
+          <Route path="/new" exact component={AddJogForm} />
           <Route path="/react-jogs" exact component={Jogs} />
           <Route path="/about" exact component={Info} />
           <Route path="/contact" component={Jogs} />
@@ -48,9 +51,7 @@ class App extends Component {
     return (
       <>  
         <Header />
-        <main >
-          {routes}
-        </main>
+        {routes}
       </> 
     )
   };

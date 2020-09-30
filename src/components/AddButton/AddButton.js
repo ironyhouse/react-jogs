@@ -1,13 +1,16 @@
 import React, { Component } from 'react'
-import classes from './AddButton.scss';
+import { NavLink } from 'react-router-dom'
+import classes from './AddButton.module.scss';
 import addImg from '../../img/add-jog.svg';
 
 class AddButton extends Component {
     render() {
         return (
-            <div  className={classes.Button}>  
-                <img src={addImg} alt="add-img"/>
-            </div>
+            <NavLink 
+                to="/new" 
+                >
+                <img src={addImg} alt="add-img" className={classes.AddButton} />
+            </NavLink>
         )
     }
 }

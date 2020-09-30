@@ -1,0 +1,57 @@
+@import '../../index.module.scss';
+
+.Login {
+    width: 500px;
+    height: 380px;
+    margin: calc((100vh - 115px - 380px)/2) auto 0 auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    border-radius: 45px;
+    background-color: $baby-purple;
+    @media (max-width: 768px) {
+        height: calc(100vh - 85px);
+        width: 100%;
+        margin: 0;
+        background-color: $white;
+    }
+
+    .LogoBear {
+        height: 150px;
+        width: 160px;
+        background: url(../../img/bear-face.svg);
+        @media (max-width: 768px) {
+            background: url(../../img/bear-face-purple.png);
+        }
+    }
+    button {
+        width: 150px;
+        height: 60px;
+        margin-top: 55px;
+
+        color: $white;
+        font-family: SFUIText-Bold;
+        font-size: 18px;
+
+        border-radius: 35px;
+        border: solid 3px $white;
+        background: none;
+        cursor: pointer;
+        transform: scale(1);
+        transition: 0.3s ease-in-out;
+        &:hover {
+            transform: scale(1.05);
+        }
+        &:active, &:focus {
+            outline: none !important;
+        }
+        @media (max-width: 768px) {
+            color: $baby-purple;
+            margin-top: 100px;
+            border: solid 3px $baby-purple;
+        }
+    }
+}

@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
 import classes from './Header.module.scss'
 import { NavLink } from 'react-router-dom'
+import Filtres from '../Filters/Filters.js'
 import logo from '../../img/logo.svg'
 import logoGreen from '../../img/logoGreen.png'
 import filter from '../../img/filter.svg'
 import activeFilter from '../../img/filter-active.svg'
 import showMenu from '../../img/menu.png'
 import hideMenu from '../../img/menu-hide.svg'
-import Filtres from '../Filters/Filters.js'
+
 
 class App extends Component {
     state = {
@@ -26,7 +27,6 @@ class App extends Component {
             menuToggle : !this.state.menuToggle,
             isDisplay : !this.state.isDisplay
         })
-
     }
 
     render() {
@@ -74,7 +74,6 @@ class App extends Component {
                 </header>
                 { this.state.filterToggle === true ? <Filtres/> : null }
             </>
-
         )
     };
 }
