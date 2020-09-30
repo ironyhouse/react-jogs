@@ -1,15 +1,17 @@
 import React, { Component } from 'react'
-// import classes from './Jogs.module.scss';
-// import Filters from '../../components/Filters/Filters';
+import AddButton from '../../components/AddButton/AddButton';
+import Jog from '../../components/Jog/Jog'
+import classes from './Jogs.module.scss';
 
 class Jogs extends Component {
     render() {
         return(
             <>
-                {/* <Filters /> */}
-                <div>
-                    
-                </div>
+                <Jog />
+                <Jog /> 
+                <Jog /> 
+                <Jog />
+                <AddButton />
             </>
         )
     }

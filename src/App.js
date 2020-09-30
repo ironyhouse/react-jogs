@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Switch, Route, Redirect} from 'react-router-dom'
 import classes from './App.module.scss';
-import Navigaton from './components/Header/Navigation/Navigation';
+import Header from './components/Header/Header';
 // import Login from './pages/Login/Login';
 import Jogs from './pages/Jogs/Jogs';
 import Info from './pages/Info/Info';
@@ -47,7 +47,7 @@ class App extends Component {
 
     return (
       <>  
-        <Navigaton />
+        <Header />
         <main >
           {routes}
         </main>

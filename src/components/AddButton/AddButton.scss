@@ -1,0 +1,14 @@
+.Button {
+    height: 60px;
+    width: 60px;
+
+    position: fixed;
+    right: 40px;
+    bottom: 40px;
+    background: #000 !important;
+
+    @media (max-width: 768px) {
+        height: 45px;
+        width: 45px;
+    }
+}

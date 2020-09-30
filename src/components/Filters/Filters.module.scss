@@ -1,0 +1,29 @@
+@import '../../index.module.scss';
+
+$padding: 30px;
+
+.Filtres {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    padding: 15px 0;
+    background: $white-two;
+
+    .Filter {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &:nth-child(1) {
+            margin-right: 45px;
+            @media (max-width: 768px) {
+                margin-right: 0.8em !important;
+            }
+        }
+
+        label {
+            color: #979797;
+            margin-right: 15px;
+        }
+    } 
+}
