@@ -3,7 +3,7 @@
 .Login {
     width: 500px;
     height: 380px;
-    margin: calc((100vh - 115px - 380px)/2) auto 0 auto;
+    margin: calc((100vh - 500px)/2) auto calc((100vh - 500px)/2) auto;
 
     display: flex;
     justify-content: center;
@@ -12,8 +12,11 @@
 
     border-radius: 45px;
     background-color: $baby-purple;
+    @media (max-width: 992px) and (orientation: landscape) {
+        margin: 100px auto 100px auto;
+    }
     @media (max-width: 768px) {
-        height: calc(100vh - 85px);
+        min-height: calc(100vh - 85px);
         width: 100%;
         margin: 0;
         background-color: $white;
@@ -22,15 +25,16 @@
     .LogoBear {
         height: 150px;
         width: 160px;
+        margin-bottom: 55px;
         background: url(../../img/bear-face.svg);
         @media (max-width: 768px) {
+            margin-bottom: 100px;
             background: url(../../img/bear-face-purple.png);
         }
     }
     button {
         width: 150px;
         height: 60px;
-        margin-top: 55px;
 
         color: $white;
         font-family: SFUIText-Bold;
@@ -50,7 +54,6 @@
         }
         @media (max-width: 768px) {
             color: $baby-purple;
-            margin-top: 100px;
             border: solid 3px $baby-purple;
         }
     }

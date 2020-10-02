@@ -1,0 +1,19 @@
+@import '../../../index.module.scss';
+
+.Filter    {
+    height: 10px;
+    padding: 10px;
+
+    color: rgba(0, 0, 0, 0.7);
+
+    border-radius: 10px;
+    border: solid 1px #979797;
+    max-width: 80px;
+    background: white;
+    @media (max-width: 768px) {
+                max-width: 70px;
+    }
+    &:active, &:focus {
+        outline: none;
+    }
+}

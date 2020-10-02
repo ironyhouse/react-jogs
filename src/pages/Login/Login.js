@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import classes from './Login.module.scss'
-import Bear from '../../img/bear-face.svg';
 
 class Login extends Component {
     render() {

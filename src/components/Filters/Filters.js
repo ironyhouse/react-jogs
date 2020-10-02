@@ -2,11 +2,11 @@ import React, { Component } from 'react'
 import Filter from './Filter/Filter';
 import classes from './Filters.module.scss';
 
-class Filtres extends Component {
+class Filters extends Component {
     
     render() {
         return (
-            <div className={classes.Filtres}>
+            <div className={classes.Filters}>
                 <div className={classes.Filter}>
                     <label htmlFor="">Date from</label>
                     <Filter />
@@ -20,4 +20,4 @@ class Filtres extends Component {
     }
 }
 
-export default Filtres;
+export default Filters;

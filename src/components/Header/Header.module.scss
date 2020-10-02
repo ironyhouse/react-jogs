@@ -4,119 +4,12 @@
     position: relative;
     width: 100vw;
     background: $apple-green;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    .logo {
-        img {
-            margin: 30px 35px;
-            height: 55px;
-            width: 145px;
-        }
-    }
-    .nav {
+    .navWrapper {
         display: flex;
         align-items: center;
-        z-index: 5;
-
-        li {
-            display: inline;
-            color: black;
-            text-transform: uppercase;
-            list-style-type: none;
-            a {
-                color: white;
-                font-family: SFUIText-Bold;
-                font-size: $text;
-                text-decoration: none;
-            
-                margin-right: 40px;
-                padding: 4px;
-
-                &.active {
-                    border-bottom: solid 2px white;
-                }
-            }
-        }
-    }
-    .filter {
-        height: 40px;
-        width: 40px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-right: 30px;
-        cursor: pointer;
-    }
-    .menuToggle {
-        display: none;
-    }
-}
-
-
-@media (max-width: 768px) {
-    .logo img {
-        margin: 20px 25px !important;
-        height: 40px !important;
-        width: 100px !important;
-    }
-
-    .menuToggle {
-        height: 24px;
-        width: 28px;
-        display: flex !important;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        margin-right: 25px;
-
-        img {
-            height: 24px;
-            width: 28px;
-            object-fit: fill;
-        }
-    }
-    .nav {
-        height: calc(100vh - 175px);
-        width: 100vw;
-
-        display: none;
-        justify-content: center;
-        align-items: flex-start !important;
-
-        margin-top: 75px;
-        padding-top: 100px;
-
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-
-        background: $white;
-
-        ul {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            text-align: center;
-
-            padding: 0;
-            
-            li {
-                margin: 15px 0 !important;
-
-                a {
-                    color: black !important;
-                    font-size: 25px !important;
-                    border-bottom: none !important;
-                    margin: 0 !important;
-                    &.active  {
-                        color: $apple-green !important;
-                    }
-                }
-            }
-        }
     }
 }

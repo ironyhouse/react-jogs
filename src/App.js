@@ -10,6 +10,9 @@ import Login from './pages/Login/Login';
 // import logo from './logo.svg';
 
 class App extends Component {
+  state = {
+    isLogin: true
+  }
   // componentDidMount() {
   //   this.props.autoLogin()
   // }
@@ -39,19 +42,21 @@ class App extends Component {
     // if (this.props.isAuthenticated) {
     let routes = (
         <Switch>
-          <Route path="/" exact component={Login} />
-          <Route path="/new" exact component={AddJogForm} />
+          <Route path="/" exact component={Jogs} />
           <Route path="/react-jogs" exact component={Jogs} />
+          <Route path="/new" exact component={AddJogForm} />
           <Route path="/about" exact component={Info} />
           <Route path="/contact" component={Jogs} />
           <Redirect to="/" />
-      </Switch>
+        </Switch>
       )
 
     return (
       <>  
-        <Header />
-        {routes}
+        {this.state.isLogin === true  
+                    ? <><Header isLogin={this.state.isLogin} />{routes}</>
+                    : <><Header isLogin={this.state.isLogin} /><Login /></>
+        } 
       </> 
     )
   };

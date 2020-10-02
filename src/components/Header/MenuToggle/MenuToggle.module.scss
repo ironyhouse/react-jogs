@@ -1,0 +1,17 @@
+.MenuToggle {
+    display: none;
+    @media (max-width: 768px) {
+        height: 24px;
+        width: 28px;
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        margin-right: 25px;
+        img {
+            height: 24px;
+            width: 28px;
+            object-fit: fill;
+        }
+    }
+}

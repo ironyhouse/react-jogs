@@ -1,0 +1,13 @@
+.Logo {
+    img {
+        margin: 30px 35px;
+        height: 55px;
+        width: 145px;
+        @media (max-width: 768px) {
+            margin: 20px 25px !important;
+            height: 40px !important;
+            width: 100px !important;
+        }
+    }
+
+}
