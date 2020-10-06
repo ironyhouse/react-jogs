@@ -7,27 +7,33 @@ import classes from './Jogs.module.scss';
 class Jogs extends Component {
     state = {
         isJogs: true,
-        jogs: [
-                ['20.12.2010', '20','15','60'],['20.12.2011', '20','15','60'],
-                ['20.12.2012', '20','15','60']
-            ]
-
     }
 
+    // ISO to Date
+    date = (date) => {
+        const DATE = new Date(+(date + '000'))
+        let pad = (date, width, character) => new Array(width - date.toString().length + 1).join(character) + date
+        let strDate =
+            pad(DATE.getDate(), 2, '0') +
+            '.' + pad(DATE.getMonth() + 1, 2, '0') +
+            '.' + DATE.getFullYear();
+
+        return strDate
+    } 
 
     render() {
         return(
             <>
-                {this.state.isJogs === true  
+                {this.props.jogsData
                     ? <div className={classes.Jogs}>
-                        { this.state.jogs.map((i, index) => {
+                        { this.props.jogsData.data.response.jogs.map((i, index) => {
                             return(
                                 <Jog 
-                                    key = {index} 
-                                    Date={this.state.jogs[index][0]} 
-                                    Speed={this.state.jogs[index][1]} 
-                                    Distance={this.state.jogs[index][2]} 
-                                    Time={this.state.jogs[index][3]} 
+                                    Key = {index} 
+                                    Date={this.date(this.props.jogsData.data.response.jogs[index].date)}
+                                    Speed={ this.props.jogsData.data.response.jogs[index].speed || Math.ceil(this.props.jogsData.data.response.jogs[index].distance * 60 / this.props.jogsData.data.response.jogs[index].time) || 0 } 
+                                    Distance={this.props.jogsData.data.response.jogs[index].distance} 
+                                    Time={this.props.jogsData.data.response.jogs[index].time} 
                                 />
                             )
                         })}

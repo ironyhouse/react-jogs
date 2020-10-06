@@ -25,13 +25,14 @@ class Navigation extends Component {
         const links = [
             {to: '/', label: 'jogs', exact: true},
             {to: '/about', label: 'info', exact: true},
-            {to: '/contact', label: 'contact us', exact: true}
+            // {to: '/contact', label: 'contact us', exact: true}
         ]
 
         return(
-            <nav className={classes.nav} style={ (this.props.isMenu === true) ? {display: 'flex'} : {display: 'none'}}>
+            <nav className={classes.nav} style={ this.props.isMenu ? {display: 'flex'} : {display: 'none'}}>
                 <ul>
                     { this.renderLinks(links) }
+                    <li onClick={this.props.clickMenuToggle}><a href="mailto:ironyhouse92@gmail.com">contact us</a></li>
                 </ul>
             </nav>
         );

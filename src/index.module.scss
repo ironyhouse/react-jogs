@@ -46,6 +46,7 @@ $subtext: 13px;
 body {
   margin: 0;
   font-family: SFUIText-Regular;
+  overflow-x: hidden !important;
 }
 h1 {
   color: $apple-green;

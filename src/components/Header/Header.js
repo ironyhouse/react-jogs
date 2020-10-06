@@ -12,7 +12,8 @@ class App extends Component {
         filterToggle : false,
         menuToggle: false,
         isMenu: false,
-        changeSize : false
+        changeSize : false,
+        mobileSize: false
     }
 
     clickFilterToggle = () => {
@@ -27,33 +28,47 @@ class App extends Component {
         })
     }
 
-
+    
 
     render() {
         window.addEventListener('resize', () => {
-            document.location.reload()
+            // document.location.reload()
             // this.forceUpdate(this.Navigation)
+            if (window.screen.width <= 768 ) {
+                if (!this.state.mobileSize) {
+                    this.setState({
+                        mobileSize : true
+                    })
+                    console.log('modile');
+                }
+            } else {
+                if (this.state.mobileSize) {
+                    this.setState({
+                        mobileSize : false
+                    })
+                    console.log('desktop');
+                }
+            }
         })
+
 
         return (
             <>
-                <header className={classes.header} style={ (this.state.menuToggle === true) ? {background: '#fff'} : {background: '#7ed321'}}>
-                    <Logo menuToggle={this.state.menuToggle } />
-                    { this.props.isLogin === true ?
+                <header className={classes.header} style={ (this.state.mobileSize && this.state.menuToggle) ? {background: '#fff'} : {background: '#7ed321'}}>
+                    <Logo menuToggle={this.state.menuToggle } mobileSize={this.state.mobileSize } />
+                    { this.props.isLogin ?
                         <div className={classes.navWrapper}>
-
                             { window.screen.width <= 768 ?
                                   <Navigation isMenu={this.state.isMenu} clickMenuToggle={this.clickMenuToggle} />
                                 : <Navigation isMenu={true} clickMenuToggle={null} />
                             }
-
                             <FiltreToggle clickFilterToggle={this.clickFilterToggle} filterToggle={this.state.filterToggle} />
                             <MenuToggle menuToggle={this.state.menuToggle} clickMenuToggle={this.clickMenuToggle} />
                         </div>
                         : null 
                     }
                 </header>
-                { this.state.filterToggle === true ? <Filtres/> : null }
+                { this.state.filterToggle ? <Filtres dateFrom={this.props.dateFrom} dateTo={this.props.dateTo} /> : null }
             </>
         )
     };

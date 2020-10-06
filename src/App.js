@@ -11,51 +11,48 @@ import Login from './pages/Login/Login';
 
 class App extends Component {
   state = {
-    isLogin: true
+    isLogin: false,
+    jogsData: null,
+    dateFrom: null,
+    dateTo: null
   }
-  // componentDidMount() {
-  //   this.props.autoLogin()
-  // }
 
 
-  // function mapDispatchToProps(dispatch) {
-  //   return {
-  //     autoLogin: () => dispatch(autoLogin())
-  //   }
-  // }
+  checkLogin = (value, jogsData) => {
+    this.setState({
+      isLogin: value,
+      jogsData
+    })
+  }
 
-  // function mapStateToProps(state) {
-  //   return {
-  //     isAuthenticated: !!state.auth.token
-  //   }
-  // }
-
+  changeDateFrom = () => {
+    this.setState({
+      dateFrom: 'FROM',
+    })
+    console.log(this.state.dateFrom);
+  }
+  changeDateTo = () => {
+    this.setState({
+      dateTo: 'TO',
+    })
+    console.log(this.state.dateTo);
+  }
 
   render() {
-    // let routes = (
-    //   <Switch>
-    //     <Route path="/" exact component={Login} />
-    //     <Redirect to="/" />
-    //   </Switch>
-    // )
-
-    // if (this.props.isAuthenticated) {
     let routes = (
         <Switch>
-          <Route path="/" exact component={Jogs} />
-          <Route path="/react-jogs" exact component={Jogs} />
+          <Route path="/" exact render={ () => <Jogs jogsData={this.state.jogsData}/> } />
           <Route path="/new" exact component={AddJogForm} />
           <Route path="/about" exact component={Info} />
-          <Route path="/contact" component={Jogs} />
           <Redirect to="/" />
         </Switch>
       )
 
     return (
       <>  
-        {this.state.isLogin === true  
-                    ? <><Header isLogin={this.state.isLogin} />{routes}</>
-                    : <><Header isLogin={this.state.isLogin} /><Login /></>
+        {this.state.isLogin
+                    ? <><Header isLogin={this.state.isLogin} dateFrom={this.changeDateFrom} dateTo={this.changeDateTo} />{routes}</>
+                    : <><Header isLogin={this.state.isLogin} /><Login checkLogin={this.checkLogin} jogs={this.getJogs} /></>
         } 
       </> 
     )

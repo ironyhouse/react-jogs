@@ -1,0 +1,13 @@
+/* @media (max-width: 768px) {
+    .react-datepicker-popper {
+        position: fixed !important;
+        top: 150px !important;
+        left: 0 !important;
+        right: 0 !important;
+        margin-left: calc((100vw - 240px)/2);
+        transform: none !important;
+    }
+    .react-datepicker__triangle {
+        left: 120px !important;
+    }
+} */

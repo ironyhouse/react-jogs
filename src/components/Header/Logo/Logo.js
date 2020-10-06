@@ -9,7 +9,9 @@ class Logo extends Component {
     render() {
         return(
             <NavLink to="/" className={classes.Logo}>
-                { this.props.menuToggle ? <img src={logoGreen} alt="logo-green"/> : <img src={logo} alt="logo"/> }
+                { (this.props.mobileSize && this.props.menuToggle) ? 
+                    <img src={logoGreen} alt="logo-green"/> : 
+                    <img src={logo} alt="logo"/> }
             </NavLink>
         );
     }

@@ -10,25 +10,30 @@
         padding: 45px 0;
         border-bottom: 1px solid $grey;
     }
-
-    img {
-        height: 85px;
-        width: 85px;
-        margin-right: 45px;
+    div {
+        width: 50%;
+        img {
+            height: 85px;
+            width: 85px;
+            margin-right: 45px;
+        }
+        p {
+            color: $greyThree;
+            margin: 6px 0;
+            &.jogDate {
+                font-family: SFUIText-Regular;
+                font-size: $text;
+            }
+            span {
+                color: black;
+                font-family: SFUIText-Medium;
+                font-size: $text;
+            }
+        }
     }
 
-    p {
-        color: $greyThree;
-        margin: 6px 0;
-        &.jogDate {
-            font-family: SFUIText-Regular;
-            font-size: $text;
-        }
-
-        span {
-            color: black;
-            font-family: SFUIText-Medium;
-            font-size: $text;
-        }
+    div:first-child {
+        display: flex;
+        justify-content: flex-end;
     }
 }
